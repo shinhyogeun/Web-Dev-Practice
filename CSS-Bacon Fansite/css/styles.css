@@ -5,12 +5,9 @@ h1 {
     font-size: 200px;
 }
 
-/*
-img {
-    background-color: red;
+img:hover {
+    background-color: gold;
 }
-
-*/
 
 /**************CLASS SELECTOR**************/
 
@@ -19,5 +16,15 @@ img {
 }
 
 .hello {
-    background-color: honeydew;
+    background-color:blueviolet;
+}
+
+.circular {
+    border-radius: 100%;
+}
+
+/**************ID SELECTOR**************/
+
+#heading {
+    color :blue;
 }
