@@ -1,18 +1,38 @@
 body{
+    color: #40514E ;
     margin: 0px;
     text-align: center;
-    font-family: 'Merriweather', sans-serif;
+    font-family: 'Do Hyeon', sans-serif;
+}
+
+hr {
+    width: 5%;
+    border-style: dotted hidden hidden hidden;
+    border-top-width: 5px;
+    border-color: gray;
 }
 
 h1 { 
-    font-size: 90px;
-    margin-top: 0px; 
+    font-size: 5.625rem;
+    color: #66BFBF;
+    margin-top: 50px auto 0 auto; 
     font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    color: #66BFBF;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3{
+    color: #11999E;
 }
 
 .top-container {
     position: relative;
-    background-color:skyblue;
+    background-color:#EAF6F6;
     padding-top: 100px;
 }
 
@@ -28,10 +48,87 @@ h1 {
     bottom: 310px;
 }
 
-#middle-container {
-    
+.profile p {
+   margin-bottom: 70px; 
 }
 
-#bottom-container {
-
+.skills h2{
+    margin-top:70px;
 }
+
+.contact-me h2 {
+    margin-top:70px;
+}
+
+.skill-row{
+    width: 50%;
+    margin: 100px auto 100px auto;
+    text-align: left;
+    line-height: 2;
+}
+
+.swift{
+    width: 25%;
+    float: left;
+    margin-right: 30px;
+}
+
+.react{
+    width: 25%;    
+    float: right;
+    margin-right: 30px;
+}
+
+.bottom-container {
+    background-color: #66BFBF;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.bottom-container p {
+    padding-top: 30px;
+    margin: 0;
+}
+
+.bottom-container a {
+    text-decoration: none;
+    color: #11999E;
+    margin: 30px;
+}
+
+.bottom-container a:hover {
+    color: #EAF6F6; 
+}
+
+/* button customising */
+
+.BUTTON_AFW {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    font-weight: 500;
+    padding: 10px;
+    background-color: #11999E;
+    text-shadow: 1px 1px 20px #000000;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    margin: 30px auto 70px auto;
+ }
+ 
+ .BUTTON_AFW:hover {
+    border: solid #0059A0 1px;
+    background: #66BFBF;
+    background-image: -webkit-linear-gradient(top, #66BFBF, #66BFBF);
+    background-image: -moz-linear-gradient(top, #66BFBF, #66BFBF);
+    background-image: -ms-linear-gradient(top, #66BFBF, #66BFBF);
+    background-image: -o-linear-gradient(top, #66BFBF, #66BFBF);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+ }
