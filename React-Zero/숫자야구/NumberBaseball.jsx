@@ -35,20 +35,7 @@ export default function NumberBaseball() {
     }
   }
 
-  const makeNumber = () => {
-    let numberArray = [];
-    for (let i = 0; i < 10; i++) {
-      console.log(numberArray)
-      const number = Math.ceil(Math.random * 9);
-      if (!numberArray.includes(number)) {
-        numberArray.push(number);
-      }
-    }
-    // while (numberArray.length < 4) {
-    // }
-    return numberArray.join(", ");
-  }
-  console.log(makeNumber())
+  q
   return (
     <>
       <p>{result}</p>
