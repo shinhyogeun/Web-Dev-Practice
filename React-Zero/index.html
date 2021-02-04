@@ -2,67 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js "></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js "></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>끝말잇기2</title>
 </head>
 
 <body>
-  <div id="root"></div>
-  <script type="text/babel">
-    class GuGuDan extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = {
-          leftNumber: 1 + parseInt(Math.random() * 9),
-          rightNumber: 1 + parseInt(Math.random() * 9),
-          inputValue: "",
-          underMassage: "",
-        }
-      }
-
-      render() {
-        return (<React.Fragment>
-          <p>{this.state.leftNumber}곱하기{this.state.rightNumber}는?</p>
-          <div>
-            <input
-              value={this.state.inputValue}
-              onChange={(e) => {
-                this.setState({
-                  ...this.state,
-                  inputValue: e.target.value,
-                })
-              }}
-            />
-            <button
-              onClick={() => {
-                Number(this.state.inputValue) === this.state.leftNumber * this.state.rightNumber ?
-                  this.setState({
-                    leftNumber: 1 + parseInt(Math.random() * 9),
-                    rightNumber: 1 + parseInt(Math.random() * 9),
-                    inputValue: "",
-                    underMassage: "딩동댕",
-                  }) :
-                  this.setState({
-                    ...this.state,
-                    inputValue: "",
-                    underMassage: "땡",
-                  })
-              }}
-            >체킹
-            </button>
-          </div>
-          <p>{this.state.underMassage}</p>
-        </React.Fragment>);
-      }
-    }
-  </script>
-  <script type="text/babel">
-    ReactDOM.render(<div><GuGuDan /><GuGuDan /></div>, document.querySelector("#root"));
-  </script>
+    <div id='root'></div>
+    <script src='../dist/app.js'></script>
 </body>
 
 </html>

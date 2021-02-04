@@ -1,6 +1,17 @@
-const cart = [1, 2, 3, 4, 5]
-const cart2 = cart.filter(item => parseInt(item / 2) === 2)
-cart2.push(2)
-console.log(cart2)
+const defaultMovie = {
+	title: ' ',
+	director: {
+		name: { first: ' ', last: ' ', },
+		nation: ' ',
+	}
+}
 
-console.log("to check github login is right")
+const coped = {
+	...defaultMovie,
+	director: {
+		...defaultMovie.director,
+		name: { ...defaultMovie.director.name }
+	},
+}
+
+console.log(coped)
