@@ -2,6 +2,7 @@ import React, { useState, memo, useRef } from "react";
 import Recode from './recode';
 
 const makeNumber = (numberArray = []) => {
+  console.log('make')
   const randomNumber = Math.ceil(Math.random() * 9);
 
   if (numberArray.length === 4) {
@@ -23,11 +24,10 @@ function NumberBaseball() {
     result: "",
     recode: [],
   })
-
   const { answer, input, result, recode } = state;
+  console.log(answer)
   const inputRef = useRef();
   const handleChange = (e) => {
-    console.log(state)
     setState({
       ...state,
       input: e.target.value,
@@ -35,7 +35,6 @@ function NumberBaseball() {
   };
 
   const handleClick = (e) => {
-    console.log(answer)
     e.preventDefault();
     if (recode.length >= 9) {
       setState({
