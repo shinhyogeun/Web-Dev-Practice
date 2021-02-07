@@ -1,19 +1,19 @@
-import React, { Component, useState } from "react";
+import React, { useState, useRef, useReducer } from "react";
 
 const CheckSpeed = () => {
 	const [state, setState] = useState('waiting');
 	const [message, setMessage] = useState('클릭해서 시작하세요');
 	const [result, setResult] = useState([]);
 
-	let startTime = null;
-	let endTime = null;
+	let startTime = useRef();
+	let endTime = useRef();
 
 	const handleClickScreen = () => {
 		if (state === 'waiting') {
 			setState('ready')
 			setMessage('초록색이 되면 클릭하세요!')
 			setTimeout(() => {
-				startTime = new Date();
+				startTime.current = new Date();
 				setState('now')
 				setMessage('지금이에요!!')
 			}, Math.ceil(Math.random() * 1000) + 2000)
@@ -21,10 +21,12 @@ const CheckSpeed = () => {
 			setState('waiting')
 			setMessage('성급하시군요 ㅎㅎ')
 		} else if (state === 'now') {
-			endTime = new Date();
+			endTime.current = new Date();
 			setState('waiting')
 			setMessage('클릭해서 시작하세요')
-			setResult([...result, endTime - startTime]);
+			console.log(endTime.current)
+			console.log(startTime.current)
+			setResult([...result, endTime.current - startTime.current]);
 		}
 	}
 
