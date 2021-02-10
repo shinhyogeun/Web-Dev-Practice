@@ -2,7 +2,6 @@ import React, { useState, memo, useRef } from "react";
 import Recode from './recode';
 
 const makeNumber = (numberArray = []) => {
-  console.log('make')
   const randomNumber = Math.ceil(Math.random() * 9);
 
   if (numberArray.length === 4) {
@@ -24,9 +23,10 @@ function NumberBaseball() {
     result: "",
     recode: [],
   })
+
   const { answer, input, result, recode } = state;
-  console.log(answer)
   const inputRef = useRef();
+
   const handleChange = (e) => {
     setState({
       ...state,
@@ -40,50 +40,37 @@ function NumberBaseball() {
       setState({
         ...state,
         result: "10번의 기회에서도 못 맞추다니..",
+        input: "",
+        recode: []
       })
-      alert("바보냐?");
-      inputRef.current.focus();
-      return (
-        setState({
-          ...state,
-          input: "",
-          result: compare(answer, input),
-          recode: [...recode, compare(answer, input)],
+      return inputRef.current.focus();
+    } else {
+      if (isCorrect(answer, input)) {
+        setState((prevState) => {
+          return (
+            {
+              ...prevState,
+              result: "홈런!!!",
+              input: "",
+              answer: makeNumber(),
+              recode: [],
+            }
+          )
         })
-      )
+        return inputRef.current.focus();
+      } else {
+        console.log(answer)
+        setState((preveState) => {
+          return (
+            {
+              ...preveState,
+              input: "",
+              recode: [...preveState.recode, compare(preveState.answer, preveState.input)]
+            }
+          )
+        })
+      }
     }
-
-    if (isCorrect(answer, input)) {
-      setState((prevState) => {
-        return (
-          {
-            ...prevState,
-            result: "홈런!!!",
-            recode: [...prevState.recode, compare(prevState.answer, prevState.input)],
-          }
-        )
-      })
-      alert("추카추카요")
-      inputRef.current.focus();
-      return setState((preveState) => {
-        return (
-          {
-            ...preveState,
-            answer: makeNumber(),
-            input: "123",
-            recode: []
-          }
-        )
-      })
-    }
-
-    setState({
-      ...state,
-      input: "",
-      result: compare(answer, input),
-      recode: [...recode, compare(answer, input)],
-    })
-    inputRef.current.focus();
   }
 
   const isCorrect = (answer, input) => {
