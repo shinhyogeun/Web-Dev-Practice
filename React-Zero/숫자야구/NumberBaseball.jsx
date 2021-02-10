@@ -36,40 +36,40 @@ function NumberBaseball() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    if (recode.length >= 9) {
+    if (isCorrect(answer, input)) {
+      setState((prevState) => {
+        return (
+          {
+            ...prevState,
+            result: "홈런!!!",
+            input: "",
+            answer: makeNumber(),
+            recode: [],
+          }
+        )
+      })
+      return inputRef.current.focus();
+    }
+    if (recode.length === 9) {
       setState({
         ...state,
         result: "10번의 기회에서도 못 맞추다니..",
+        answer: makeNumber(),
         input: "",
         recode: []
       })
       return inputRef.current.focus();
     } else {
-      if (isCorrect(answer, input)) {
-        setState((prevState) => {
-          return (
-            {
-              ...prevState,
-              result: "홈런!!!",
-              input: "",
-              answer: makeNumber(),
-              recode: [],
-            }
-          )
-        })
-        return inputRef.current.focus();
-      } else {
-        console.log(answer)
-        setState((preveState) => {
-          return (
-            {
-              ...preveState,
-              input: "",
-              recode: [...preveState.recode, compare(preveState.answer, preveState.input)]
-            }
-          )
-        })
-      }
+      console.log(answer)
+      setState((preveState) => {
+        return (
+          {
+            ...preveState,
+            input: "",
+            recode: [...preveState.recode, compare(preveState.answer, preveState.input)]
+          }
+        )
+      })
     }
   }
 
