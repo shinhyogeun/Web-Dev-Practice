@@ -24,7 +24,7 @@ function WordRelay() {
             setState({
                 ...state,
                 word: value,
-                value: "",
+                value: "123",
                 result: "딩동댕",
             });
             inputRef.current.focus();

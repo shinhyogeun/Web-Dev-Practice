@@ -16,18 +16,18 @@ const Reaction = () => {
 				setState('now')
 				setMessage('지금이에요!!')
 			}, Math.ceil(Math.random() * 1000) + 2000)
+
 		} else if (state === 'ready') {
 			setState('waiting')
 			setMessage('성급하시군요 ㅎㅎ')
+
 		} else if (state === 'now') {
 			endTime.current = new Date();
 			setState('waiting')
 			setMessage('클릭해서 시작하세요')
 			setResult([...result, endTime.current - startTime.current]);
-			console.log(endTime.current, startTime.current)
-			endTime.current = null
-			startTime.current = null
-			console.log(endTime.current, startTime.current)
+			endTime.current = null;
+			startTime.current = null;
 		}
 	}
 
@@ -46,11 +46,8 @@ const Reaction = () => {
 			>
 				{message}
 			</div>
-			{result.length === 0
-				?
-				null
-				:
-				<div>평균시간: {result.reduce((a, b) => a + b / result.length)}ms</div>}
+			{result.length === 0 ?
+				null : <div>평균시간: {result.reduce((a, b) => a + b / result.length, 0)}ms</div>}
 			<button onClick={handleClickReset}>RESET!</button>
 		</>
 	)

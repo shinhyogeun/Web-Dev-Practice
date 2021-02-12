@@ -24,10 +24,9 @@ const LottoFunction = () => {
 	const timeTrash = useRef([]);
 
 	const update = () => {
-		console.log("update")
 		for (let i = 0; i < 6; i++) {
 			timeTrash.current[i] = setTimeout(() => {
-				setShowNumber((preveShowNumber) => [...preveShowNumber, lottoNumber[i]])
+				setShowNumber((preveState) => [...preveState, lottoNumber[i]])
 			}, i * 1000)
 		}
 
