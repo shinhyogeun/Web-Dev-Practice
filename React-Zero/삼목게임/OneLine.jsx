@@ -1,7 +1,7 @@
 import React from "react";
 import OneCell from "./OneCell";
 
-const OneLine = ({ line, onClick, row }) => {
+const OneLine = ({ line, dispatch, row }) => {
 	return (
 		<tr>
 			{line.map((cell, col) =>
@@ -10,11 +10,11 @@ const OneLine = ({ line, onClick, row }) => {
 					row={row}
 					col={col}
 					cell={cell}
-					onClick={onClick}
+					dispatch={dispatch}
 				/>
 			)}
 		</tr>
 	);
-}
+};
 
 export default OneLine;

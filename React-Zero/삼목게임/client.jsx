@@ -1,5 +1,5 @@
 const React = require('react');
 const ReactDom = require('react-dom');
-import Tictactoe from "./tictactoe";
+import TicTacToe from "./TicTacToe";
 
-ReactDom.render(<Tictactoe />, document.querySelector("#root"));
+ReactDom.render(<TicTacToe />, document.querySelector("#root"));
