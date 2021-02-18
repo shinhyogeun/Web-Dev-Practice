@@ -33,8 +33,8 @@ describe('지뢰밭은', () => {
 
     const { getAllByText } = render(<TableContainer />)
 
-    getByText(/[0 - 9]/).forEach(item => {
-      fireEvent(item).click();
+    getAllByText(/[0 - 9]/).forEach(item => {
+      fireEvent.click(item);
       expect(dispatch).toBeCalled();
     });
   })
