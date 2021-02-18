@@ -1,9 +1,5 @@
 import React from 'react';
 
-const Td = () => {
-    return (
-        <td></td>
-    )
+export default function Td({ row, col, value, onClick }) {
+  return <td onClick={() => onClick(row, col)}>{value}</td>
 }
-
-export default Td;
