@@ -1,4 +1,4 @@
-import React, { useReducer, useContext } from 'react';
+import React, { useReducer } from 'react';
 
 const CELL = {
   MINE: -1,
@@ -25,9 +25,6 @@ const makeTable = (row, col, mineCount) => {
 
   return table;
 }
-
-console.log("asd")
-console.log(makeTable(10, 10, 25))
 
 const initialState = {
   row: 0,
@@ -56,12 +53,8 @@ const reduser = (state, action) => {
   }
 }
 
-const MineFind = () => {
-  const [state, dispatch] = useReducer(reduser, initialState);
-
+export default function MineFind() {
   return (
-    <div>지뢰찾기 시작!!</div>
+    <h1>지뢰를 찾아봅시다!</h1>
   )
-}
-
-export default MineFind;
+};
