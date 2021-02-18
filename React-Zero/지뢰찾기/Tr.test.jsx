@@ -10,7 +10,9 @@ describe('Tr', () => {
   it('Td들을 보여준다.', () => {
     const row = 3;
     const cols = [1, 0, 1, 0, 0, 0, 1];
+
     const { queryAllByText } = render(<Tr row={row} cols={cols} onClick={handleClick} />);
+
     [0, 1].forEach((value) => {
       queryAllByText(value).forEach((cell) => {
         expect(cell).toBeInTheDocument();
