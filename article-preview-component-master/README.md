@@ -1,6 +1,6 @@
-# Frontend Mentor - Profile card component
+# Frontend Mentor - Article preview component
 
-![Design preview for the Profile card component coding challenge](./design/desktop-preview.jpg)
+![Design preview for the Article preview component coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
 
@@ -8,13 +8,20 @@ Thanks for checking out this front-end coding challenge.
 
 [Frontend Mentor](https://www.frontendmentor.io) challenges allow you to improve your skills in a real-life workflow.
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+**To do this challenge, you need a basic understanding of HTML, CSS and a tiny bit of JavaScript.**
 
 ## The challenge
 
-Your challenge is to build out this profile card component and get it looking as close to the design as possible.
+Your challenge is to build out this article preview component and get it looking as close to the design as possible.
 
 You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+
+The only JavaScript you'll need for this challenge is to initiate the share options when someone clicks the share icon.
+
+Your users should be able to: 
+
+- View the optimal layout for the component depending on their device's screen size
+- See the social media share links when they click the share icon
 
 Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
 
@@ -40,6 +47,7 @@ Feel free to use any workflow that you feel comfortable with. Below is a suggest
 4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
 5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
 6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+7. If you'd like to try making your project fully responsive, we'd recommend checking out [Sizzy](https://bit.ly/fm-sizzy). It's a great browser that makes it easy to view your site across multiple devices.
 
 ## Deploying your project
 
