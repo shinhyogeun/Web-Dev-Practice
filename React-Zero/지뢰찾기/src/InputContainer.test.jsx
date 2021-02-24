@@ -11,9 +11,9 @@ jest.mock('react-redux');
 describe('InputContainer', () => {
   const dispatch = jest.fn();
   const data = {
-    rowValue: '',
-    colValue: '',
-    mineCount: '',
+    rowValue: 0,
+    colValue: 0,
+    mineCount: 0,
   }
 
   beforeEach(() => {
