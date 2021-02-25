@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import { changeInput } from './actions';
+
 import Input from './Input';
 
 export default function InputContainer() {
@@ -13,10 +15,7 @@ export default function InputContainer() {
   }))
 
   function handleChange(e) {
-    dispatch({
-      type: "changeInput",
-      value: e.target.value
-    })
+    dispatch(changeInput(e.target.name, e.target.value));
   }
 
   function handleClick() {

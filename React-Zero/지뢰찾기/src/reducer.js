@@ -1,8 +1,8 @@
 const initailState = {
-  row: 0,
-  col: 0,
-  mine: 0,
-  table: [],
+  row: '',
+  col: '',
+  mine: '',
+  tableData: [],
 };
 
 export default function reducer(state = initailState, action) {
