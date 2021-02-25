@@ -11,9 +11,9 @@ jest.mock('react-redux');
 describe('InputContainer', () => {
   const dispatch = jest.fn();
   const data = {
-    row: 0,
-    col: 0,
-    mine: 0,
+    row: '',
+    col: '',
+    mine: '',
   }
 
   beforeEach(() => {
@@ -26,7 +26,7 @@ describe('InputContainer', () => {
   it('input을 입력하면 dispatch가 실행된다.', () => {
     const { queryByPlaceholderText } = render(<InputContainer />)
 
-    const placeholders = ['row', 'col', 'mineCount'];
+    const placeholders = ['가로', '세로', '지뢰설치 갯수'];
 
     placeholders.forEach((placeholder) => {
       fireEvent.change(queryByPlaceholderText(placeholder), {
