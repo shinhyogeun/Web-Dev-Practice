@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
-import { changeInput } from './actions';
+import { changeInput, makeTable } from './actions';
 
 import Input from './Input';
 
@@ -19,7 +19,7 @@ export default function InputContainer() {
   }
 
   function handleClick() {
-    dispatch({ type: "click" })
+    dispatch(makeTable())
   }
 
   return (

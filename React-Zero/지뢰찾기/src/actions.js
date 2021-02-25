@@ -4,3 +4,9 @@ export function changeInput(placeholder, value) {
     payload: { placeholder, value }
   };
 }
+
+export function makeTable() {
+  return {
+    type: "click"
+  };
+}
