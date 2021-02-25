@@ -1,9 +1,12 @@
-import React, { useReducer } from 'react';
+import React from 'react';
 
-const CELL = {
-  MINE: -1,
-  SAFE: 0,
-}
+import InputContainer from './InputContainer';
+import TableContainer from './TableContainer';
+
+// const CELL = {
+//   MINE: -1,
+//   SAFE: 0,
+// }
 
 const makeTable = (row, col, mineCount) => {
   let table = []
@@ -26,35 +29,12 @@ const makeTable = (row, col, mineCount) => {
   return table;
 }
 
-const initialState = {
-  row: 0,
-  col: 0,
-  mineCount: 0,
-  tableData: []
-}
-
-const CELL_CLICK = "CELL_CLICK";
-const GAME_START = "GAME_START";
-
-const reduser = (state, action) => {
-  switch (action.type) {
-    case GAME_START:
-      const { row, col, mineCount } = action;
-      return {
-        row,
-        col,
-        mineCount,
-        tableData: makeTable(row, col, mineCount)
-      }
-
-    case CELL_CLICK:
-    default:
-      break;
-  }
-}
-
 export default function MineFind() {
   return (
-    <h1>지뢰를 찾아봅시다!</h1>
+    <>
+      <h1>지뢰를 찾아봅시다!</h1>
+      <InputContainer />
+      <TableContainer />
+    </>
   )
 }

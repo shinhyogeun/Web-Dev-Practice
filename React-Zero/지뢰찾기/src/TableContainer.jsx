@@ -11,7 +11,7 @@ export default function TableContainer() {
   }))
 
   function handleClickCell(row, col) {
-    dispatch({ type: 'CLICK_CELL', row, col })
+    dispatch({ type: 'clickCell', payload: { row, col } })
   }
 
   return (

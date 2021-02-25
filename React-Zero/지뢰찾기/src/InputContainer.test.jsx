@@ -11,15 +11,15 @@ jest.mock('react-redux');
 describe('InputContainer', () => {
   const dispatch = jest.fn();
   const data = {
-    rowValue: 0,
-    colValue: 0,
-    mineCount: 0,
+    row: 0,
+    col: 0,
+    mine: 0,
   }
 
   beforeEach(() => {
     jest.clearAllMocks();
 
-    useSelector.mockImplementation((selector) => selector({ data }));
+    useSelector.mockImplementation((selector) => selector(data));
     useDispatch.mockImplementation(() => (dispatch));
   });
 

@@ -10,7 +10,7 @@ module.exports = {
     },
 
     entry: {
-        app: ['./src/client'],
+        app: ['./client'],
     }, //입력
 
     module: {
