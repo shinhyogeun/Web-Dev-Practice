@@ -31,4 +31,14 @@ describe('reducer는', () => {
     const state3 = reducer(state2, clickRight(2, 2));
     expect(state3.tableData[2][2]).toBe(CELL.NORMAL);
   });
+
+  context('왼쪽 버튼을 클릭한다면', () => {
+    // 지뢰라면 게임종료한다.
+    it('지뢰라면 게임종료한다.', () => {
+      const state = reducer(initialState, clickCell(1, 1));
+      expect(state.halted).toBe(true);
+    });
+    // 지뢰아니면 주변에 지뢰세서 각인!
+    // and -> DFS
+  });
 });
