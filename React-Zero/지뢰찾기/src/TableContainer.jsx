@@ -10,14 +10,20 @@ export default function TableContainer() {
     tableData: state.tableData,
   }))
   console.log(tableData)
+
   function handleClickCell(row, col) {
     dispatch({ type: 'clickCell', payload: { row, col } })
+  }
+
+  function handleRightClick() {
+    // dispatch()
   }
 
   return (
     <Table
       tableData={tableData}
       handleClick={handleClickCell}
+      handleRightClick={handleRightClick}
     />
   )
 }

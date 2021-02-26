@@ -2,7 +2,7 @@ import React from 'react';
 
 import Tr from './Tr';
 
-export default function Table({ tableData, handleClick }) {
+export default function Table({ tableData, handleClick, handleRightClick }) {
   return (
     <table>
       <tbody>
@@ -12,6 +12,7 @@ export default function Table({ tableData, handleClick }) {
             row={index}
             cols={oneLine}
             onClick={handleClick}
+            onContextMenu={handleRightClick}
           />
         ))}
       </tbody>

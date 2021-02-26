@@ -38,4 +38,17 @@ describe('지뢰밭은', () => {
       expect(dispatch).toBeCalled();
     });
   })
+
+  it('오른쪽 클릭하면 무 -> ! -> ?변경', () => {
+    const dispatch = jest.fn();
+
+    useDispatch.mockImplementation(() => (dispatch));
+
+    const { container } = render(<TableContainer />)
+
+    container.querySelectorAll('td').forEach(item => {
+      fireEvent.contextMenu(item);
+      expect(dispatch).toBeCalled();
+    });
+  })
 });

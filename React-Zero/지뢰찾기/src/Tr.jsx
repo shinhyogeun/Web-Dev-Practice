@@ -2,7 +2,7 @@ import React from 'react';
 
 import Td from './Td';
 
-const Tr = ({ row, cols, onClick }) => {
+const Tr = ({ row, cols, onClick, onContextMenu }) => {
   return (
     <tr>
       {cols.map((value, col) => (
@@ -12,6 +12,7 @@ const Tr = ({ row, cols, onClick }) => {
           col={col}
           value={value}
           onClick={onClick}
+          onContextMenu={onContextMenu}
         />))}
     </tr>
   )
