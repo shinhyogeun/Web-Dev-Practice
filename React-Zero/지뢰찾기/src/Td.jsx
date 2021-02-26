@@ -7,7 +7,7 @@ export default function Td({
   col,
   value,
   onClick,
-  onLeftClick,
+  onContextMenu,
 }) {
 
   function makeCSS(value) {
@@ -49,6 +49,7 @@ export default function Td({
       id={String(row) + String(col)}
       style={makeCSS(value)}
       onClick={() => onClick(row, col)}
+      onContextMenu={() => onContextMenu(row, col)}
     >
       {makeInnerText(value) === 0 ? '' : makeInnerText(value)}
     </td>
