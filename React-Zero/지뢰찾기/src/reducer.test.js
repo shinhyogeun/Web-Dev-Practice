@@ -1,11 +1,11 @@
-import { changeInput } from './actions';
+import { changeInput, makeTable } from './actions';
 import reducer from './reducer';
 
 describe('reducer는', () => {
   const initialState = {
-    row: '',
-    col: '',
-    mine: '',
+    row: 10,
+    col: 10,
+    mine: 25,
     tableData: [],
   }
 
@@ -16,6 +16,7 @@ describe('reducer는', () => {
 
   it('만들기 버튼을 누르면 새로운 tableData를 만든다.', () => {
     const state = reducer(initialState, makeTable())
+    console.log(state.tableData);
     expect(state.tableData).not.toBe([]);
   });
 });

@@ -19,9 +19,9 @@ describe('지뢰밭은', () => {
   useSelector.mockImplementation((selector) => selector({ tableData }));
 
   it('속성(지뢰or물음표or무 등등)을 잘 보여준다.', () => {
-    const { getAllByText } = render(<TableContainer />)
+    const { container } = render(<TableContainer />)
 
-    getAllByText(/[0 - 9]/).forEach(item => {
+    container.querySelectorAll("td").forEach(item => {
       expect(item).toBeInTheDocument();
     });
   })
@@ -31,9 +31,9 @@ describe('지뢰밭은', () => {
 
     useDispatch.mockImplementation(() => (dispatch));
 
-    const { getAllByText } = render(<TableContainer />)
+    const { container } = render(<TableContainer />)
 
-    getAllByText(/[0 - 9]/).forEach(item => {
+    container.querySelectorAll('td').forEach(item => {
       fireEvent.click(item);
       expect(dispatch).toBeCalled();
     });

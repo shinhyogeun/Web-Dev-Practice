@@ -9,7 +9,7 @@ export default function TableContainer() {
   const { tableData } = useSelector((state) => ({
     tableData: state.tableData,
   }))
-
+  console.log(tableData)
   function handleClickCell(row, col) {
     dispatch({ type: 'clickCell', payload: { row, col } })
   }

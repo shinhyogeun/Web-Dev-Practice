@@ -7,6 +7,6 @@ export function changeInput(placeholder, value) {
 
 export function makeTable() {
   return {
-    type: "click"
+    type: "makeTable"
   };
 }
