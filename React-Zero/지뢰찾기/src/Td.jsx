@@ -29,7 +29,10 @@ export default function Td({
   }
 
   function makeInnerText(value) {
-    if ([CELL.MINE, CELL.NORMAL].includes(value)) {
+    if (CELL.MINE === value) {
+      return 'X';
+    }
+    if ([CELL.NORMAL].includes(value)) {
       return '';
     }
 

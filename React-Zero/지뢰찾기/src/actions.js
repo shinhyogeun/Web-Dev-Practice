@@ -10,3 +10,23 @@ export function makeTable() {
     type: "makeTable"
   };
 }
+
+export function clickCell(row, col) {
+  return {
+    type: "clickCell",
+    payload: {
+      row,
+      col,
+    }
+  }
+}
+
+export function clickRight(row, col) {
+  return {
+    type: "clickRight",
+    payload: {
+      row,
+      col,
+    }
+  }
+}

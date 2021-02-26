@@ -1,4 +1,6 @@
-const initailState = {
+import { clickRight } from "./actions";
+
+const initialState = {
   row: '',
   col: '',
   mine: '',
@@ -36,22 +38,62 @@ const makeTable = (row, col, mineCount) => {
   return table;
 }
 
+function right(table, row, col) {
+  const copyTable = [...table]
+  copyTable[row] = [...table[row]];
+
+  if ([CELL.MINE].includes(copyTable[row][col])) {
+    copyTable[row][col] = CELL.MINE_FLAG;
+    return copyTable;
+  }
+
+  if ([CELL.MINE_FLAG].includes(copyTable[row][col])) {
+    copyTable[row][col] = CELL.MINE_QUATIONS;
+    return copyTable;
+  }
+
+  if ([CELL.MINE_QUATIONS].includes(copyTable[row][col])) {
+    copyTable[row][col] = CELL.MINE;
+    return copyTable;
+  }
+
+  if ([CELL.NORMAL].includes(copyTable[row][col])) {
+    copyTable[row][col] = CELL.NORMAL_FLAG;
+    return copyTable;
+  }
+
+  if ([CELL.NORMAL_FLAG].includes(copyTable[row][col])) {
+    copyTable[row][col] = CELL.NORMAL_QUATIONS;
+    return copyTable;
+  }
+
+  if ([CELL.NORMAL_QUATIONS].includes(copyTable[row][col])) {
+    copyTable[row][col] = CELL.NORMAL;
+    return copyTable;
+  }
+
+  return copyTable;
+}
+
 const reducers = {
   'changeInput': (state, { payload: { placeholder, value } }) => ({
     ...state,
     [placeholder]: value,
   }),
   'makeTable': (state) => {
-    const a = makeTable(Number(state.row), Number(state.col), Number(state.mine))
-    console.log(state)
     return {
       ...state,
-      tableData: a,
+      tableData: makeTable(Number(state.row), Number(state.col), Number(state.mine)),
     }
   },
-
+  'clickRight': (state, { payload: { row, col } }) => {
+    return {
+      ...state,
+      tableData: right(state.tableData, row, col),
+    }
+  },
 };
 
-export default function reducer(state = initailState, action) {
+export default function reducer(state = initialState, action) {
   return reducers[action.type] ? reducers[action.type](state, action) : state;
 }

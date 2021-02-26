@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Table from './Table';
 
+import { clickCell, clickRight } from './actions';
+
 export default function TableContainer() {
   const dispatch = useDispatch();
   const { tableData } = useSelector((state) => ({
@@ -12,11 +14,11 @@ export default function TableContainer() {
   console.log(tableData)
 
   function handleClickCell(row, col) {
-    dispatch({ type: 'clickCell', payload: { row, col } })
+    dispatch(clickCell(row, col));
   }
 
-  function handleRightClick() {
-    // dispatch()
+  function handleRightClick(row, col) {
+    dispatch(clickRight(row, col));
   }
 
   return (

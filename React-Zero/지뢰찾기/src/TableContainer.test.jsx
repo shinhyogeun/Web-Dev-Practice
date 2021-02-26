@@ -10,10 +10,10 @@ jest.mock('react-redux');
 
 describe('지뢰밭은', () => {
   const tableData = [
-    [0, 0, 0, 0],
-    [0, 1, 0, 1],
-    [1, 0, 0, 1],
-    [0, 1, 1, 0]
+    [-7, -1, -1, -1],
+    [-1, -7, -1, -7],
+    [-7, -1, -1, -7],
+    [-1, -7, -7, -1]
   ]
 
   useSelector.mockImplementation((selector) => selector({ tableData }));
