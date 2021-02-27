@@ -67,7 +67,30 @@ function right(table, row, col) {
   return copyTable;
 }
 
-export function left(state, row, col) {
+function makeNearPointArray(table, row, col) {
+  const nearPoint = [];
+  for (let i = -1; i < 2; i++) {
+    for (let j = -1; j < 2; j++) {
+      if (i === 0 && j === 0) continue;
+
+      if (0 <= row + i && row + i < table.length) {
+        if (0 <= col + j && col + j < table[0].length) {
+          nearPoint.push(table[row + i][col + j])
+        }
+      }
+    }
+  }
+
+  return nearPoint
+}
+
+function calculateNearMine(table, row, col) {
+  const nearPoint = makeNearPointArray(table, row, col)
+
+
+}
+
+function left(state, row, col) {
   const copyTable = []
   for (let i = 0; i < state.tableData.length; i++) {
     copyTable[i] = [...state.tableData[i]];
@@ -75,6 +98,7 @@ export function left(state, row, col) {
 
   if (copyTable[row][col] === CELL.MINE) {
     copyTable[row][col] = CELL.MINE_OPENED
+
     return ({
       ...state,
       halted: true,
@@ -83,13 +107,13 @@ export function left(state, row, col) {
   }
 
   if (copyTable[row][col] === CELL.NORMAL) {
-    const nearMineCount = countNearMine(table, row, col)
+    const mineCount = calculateNearMine(table, row, col)
 
     // if (nearMineCount) {
 
     // }
 
-    copyTable[row][col] = nearMineCount
+    copyTable[row][col] = mineCount
 
     return ({
       ...state,
@@ -100,7 +124,11 @@ export function left(state, row, col) {
   return state
 }
 
-function nearMineCount(table, row, col) {
-
-}
-export { makeTable, right, CELL };
+export {
+  CELL,
+  makeTable,
+  right,
+  left,
+  makeNearPointArray,
+  calculateNearMine,
+};

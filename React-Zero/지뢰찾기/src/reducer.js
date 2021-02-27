@@ -26,7 +26,6 @@ const reducers = {
     }
   },
   'clickCell': (state, { payload: { row, col } }) => {
-    console.log(left(state, row, col))
     return left(state, row, col)
   },
 };
