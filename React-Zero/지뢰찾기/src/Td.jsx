@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CELL } from './reducer';
+import { CELL } from './clickEvent';
 
 export default function Td({
   row,
@@ -23,15 +23,18 @@ export default function Td({
       return { 'backgroundColor': 'yellow' }
     }
 
-    if ([CELL.OPENED].includes(value)) {
-      return
-    };
+    return
   }
 
   function makeInnerText(value) {
     if (CELL.MINE === value) {
       return 'X';
     }
+
+    if (CELL.MINE_OPENED === value) {
+      return '펑!';
+    }
+
     if ([CELL.NORMAL].includes(value)) {
       return '';
     }
@@ -52,7 +55,7 @@ export default function Td({
       id={String(row) + String(col)}
       style={makeCSS(value)}
       onClick={() => onClick(row, col)}
-      onContextMenu={() => onContextMenu(row, col)}
+      onContextMenu={(e) => onContextMenu(e, row, col)}
     >
       {makeInnerText(value) === 0 ? '' : makeInnerText(value)}
     </td>

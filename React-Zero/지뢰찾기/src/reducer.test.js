@@ -7,7 +7,9 @@ import {
   clickRight,
 } from './actions';
 
-import reducer, { CELL } from './reducer';
+import reducer from './reducer';
+
+import { CELL } from './clickEvent';
 
 describe('reducer는', () => {
 
@@ -33,12 +35,20 @@ describe('reducer는', () => {
   });
 
   context('왼쪽 버튼을 클릭한다면', () => {
-    // 지뢰라면 게임종료한다.
+
     it('지뢰라면 게임종료한다.', () => {
       const state = reducer(initialState, clickCell(1, 1));
       expect(state.halted).toBe(true);
     });
-    // 지뢰아니면 주변에 지뢰세서 각인!
+
+    it('지뢰아니면 주변에 지뢰세서 각인!', () => {
+      const state = reducer(initialState, clickCell(2, 2));
+      expect(state.tableData[2][2]).toBe(3);
+      const state = reducer(initialState, clickCell(3, 3));
+      expect(state.tableData[3][3]).toBe(2);
+      const state = reducer(initialState, clickCell(2, 1));
+      expect(state.tableData[3][3]).toBe(2);
+    });
     // and -> DFS
   });
 });

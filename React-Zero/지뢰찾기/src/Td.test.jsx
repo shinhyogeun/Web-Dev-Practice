@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { render, fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
-import { CELL } from './reducer';
+import { CELL } from './clickEvent';
 
 import Td from './Td';
 
@@ -43,7 +43,7 @@ describe('Cell은', () => {
     expect(handleRightClick).toBeCalled();
   });
 
-  it('지뢰이든 지뢰가 아니든 일단은 내용을 보여주지 않는다.', () => {
+  it('지뢰이든 지뢰가 아니든 일단은 내용을 보여주지 않는다.(지금은 아니야 for Debugging)', () => {
     const { container } = render(<Td
       row={3}
       col={3}
@@ -53,7 +53,7 @@ describe('Cell은', () => {
       container: document.body.appendChild(tableRow)
     })
 
-    expect(container.querySelector("td").innerHTML).toBe('');
+    expect(container.querySelector("td").innerHTML).toBe('X');
   })
 
   it('궁금한 칸이면 ?를 보여준다.', () => {

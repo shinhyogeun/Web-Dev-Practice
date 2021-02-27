@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -8,16 +8,25 @@ import { clickCell, clickRight } from './actions';
 
 export default function TableContainer() {
   const dispatch = useDispatch();
-  const { tableData } = useSelector((state) => ({
+  const { tableData, halted } = useSelector((state) => ({
     tableData: state.tableData,
+    halted: state.halted,
   }))
-  console.log(tableData)
+
+  useEffect(() => {
+    if (halted) alert('게임끝')
+  }, [halted])
 
   function handleClickCell(row, col) {
+    if (halted) return;
+
     dispatch(clickCell(row, col));
   }
 
-  function handleRightClick(row, col) {
+  function handleRightClick(e, row, col) {
+    if (halted) return;
+
+    e.preventDefault();
     dispatch(clickRight(row, col));
   }
 
