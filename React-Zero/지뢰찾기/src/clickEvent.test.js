@@ -13,7 +13,7 @@ import {
 describe('makeTable', () => {
   it('올바른 결과를 리턴한다.', () => {
     const { tableData } = initialState
-    const result = makeNearPointArray(tableData, 1, 1)
-    console.log(result)
+    const result = makeNearPointArray(tableData, 0, 0)
+    expect(result).toHaveLength(3)
   })
 })

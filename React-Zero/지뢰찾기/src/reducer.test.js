@@ -47,8 +47,8 @@ describe('reducer는', () => {
       const state = reducer(initialState, clickCell(3, 3));
       expect(state.tableData[3][3]).toBe(2);
       const state = reducer(initialState, clickCell(2, 1));
-      expect(state.tableData[3][3]).toBe(2);
+      expect(state.tableData[2][1]).toBe(2);
     });
-    // and -> DFS
+
   });
 });
