@@ -1,11 +1,12 @@
 import { right, makeTable, left } from './clickEvent';
-
+// 언제나 state의 뜻을 명확하게 해야한다. state의 흐름 === 프로그램의 흐름
 const initialState = {
   row: '',
   col: '',
   mine: '',
-  halted: false,
+  halted: null,
   tableData: [],
+  time: 0,
 };
 
 const reducers = {
@@ -17,7 +18,8 @@ const reducers = {
     return {
       ...state,
       tableData: makeTable(Number(state.row), Number(state.col), Number(state.mine)),
-      halted: false,
+      halted: null,
+      time: 0,
     }
   },
   'clickRight': (state, { payload: { row, col } }) => {
@@ -29,12 +31,24 @@ const reducers = {
   'clickCell': (state, { payload: { row, col } }) => {
     return left(state, row, col);
   },
+  'gameStart': (state) => {
+    return {
+      ...state,
+      halted: false,
+    }
+  },
   'endGame': (state) => {
     return {
       ...state,
       halted: true,
     }
   },
+  'updateTime': (state) => {
+    return {
+      ...state,
+      time: state.time + 1,
+    }
+  }
 };
 
 export default function reducer(state = initialState, action) {

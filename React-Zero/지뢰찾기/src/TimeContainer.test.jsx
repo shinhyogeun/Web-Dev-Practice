@@ -9,6 +9,7 @@ import TimeContainer from './TimeContainer';
 import { render } from '@testing-library/react';
 
 jest.mock('react-redux');
+jest.useFakeTimers();
 
 describe('TimeContainer', () => {
 
@@ -23,7 +24,7 @@ describe('TimeContainer', () => {
     given('halted', () => false);
     it('그려질 때 시간을 흘러가게하는 함수가 실행된다.', () => {
       render(<TimeContainer />)
-      expect(dispatch).toBeCalled();
+      expect(setTimeout).toHaveBeenCalledTimes(1);
     });
   })
 })

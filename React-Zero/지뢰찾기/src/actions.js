@@ -11,6 +11,12 @@ export function makeTable() {
   }
 }
 
+export function gameStart() {
+  return {
+    type: 'gameStart',
+  }
+}
+
 export function endGame() {
   return {
     type: 'endGame',
@@ -35,4 +41,8 @@ export function clickRight(row, col) {
       col,
     }
   }
+}
+
+export function updateTime() {
+  return { type: "updateTime" };
 }

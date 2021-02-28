@@ -14,6 +14,7 @@ describe('지뢰찾기에서', () => {
     row: '',
     col: '',
     mine: '',
+    time: 0,
     tableData: [
       [0, 0, 0, 0],
       [0, 1, 0, 1],
