@@ -6,7 +6,7 @@ import given from 'given2';
 
 import TimeContainer from './TimeContainer';
 
-import { render } from 'react-dom';
+import { render } from '@testing-library/react';
 
 jest.mock('react-redux');
 
