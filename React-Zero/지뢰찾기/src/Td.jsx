@@ -27,15 +27,11 @@ export default function Td({
   }
 
   function makeInnerText(value) {
-    if (CELL.MINE === value) {
-      return 'X';
-    }
-
     if (CELL.MINE_OPENED === value) {
       return '펑!';
     }
 
-    if ([CELL.NORMAL].includes(value)) {
+    if ([CELL.NORMAL, CELL.MINE].includes(value)) {
       return '';
     }
 
@@ -46,6 +42,7 @@ export default function Td({
     if ([CELL.MINE_QUATIONS, CELL.NORMAL_QUATIONS].includes(value)) {
       return '?'
     }
+
     // 열린 애들만 있어요!
     return value;
   }

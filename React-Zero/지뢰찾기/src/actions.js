@@ -8,7 +8,13 @@ export function changeInput(placeholder, value) {
 export function makeTable() {
   return {
     type: "makeTable"
-  };
+  }
+}
+
+export function endGame() {
+  return {
+    type: 'endGame',
+  }
 }
 
 export function clickCell(row, col) {

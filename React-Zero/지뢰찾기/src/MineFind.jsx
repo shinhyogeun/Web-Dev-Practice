@@ -8,7 +8,8 @@ export default function MineFind() {
     <>
       <h1>지뢰를 찾아봅시다!</h1>
       <InputContainer />
+      <TimeContainer />
       <TableContainer />
     </>
-  )
+  );
 }

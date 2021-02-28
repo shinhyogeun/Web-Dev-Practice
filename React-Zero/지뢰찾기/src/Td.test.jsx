@@ -43,7 +43,7 @@ describe('Cell은', () => {
     expect(handleRightClick).toBeCalled();
   });
 
-  it('지뢰이든 지뢰가 아니든 일단은 내용을 보여주지 않는다.(지금은 아니야 for Debugging)', () => {
+  it('지뢰이든 지뢰가 아니든 일단은 내용을 보여주지 않는다.', () => {
     const { container } = render(<Td
       row={3}
       col={3}
@@ -53,7 +53,7 @@ describe('Cell은', () => {
       container: document.body.appendChild(tableRow)
     })
 
-    expect(container.querySelector("td").innerHTML).toBe('X');
+    expect(container.querySelector("td").innerHTML).toBe('');
   })
 
   it('궁금한 칸이면 ?를 보여준다.', () => {

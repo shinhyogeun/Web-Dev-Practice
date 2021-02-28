@@ -21,7 +21,7 @@ describe('reducer는', () => {
 
   it('만들기 버튼을 누르면 새로운 tableData를 만든다.', () => {
     const state = reducer(initialState, makeTable())
-    console.log(state.tableData);
+
     expect(state.tableData).not.toBe(initialState.tableData);
   });
 
@@ -37,17 +37,22 @@ describe('reducer는', () => {
   context('왼쪽 버튼을 클릭한다면', () => {
 
     it('지뢰라면 게임종료한다.', () => {
-      const state = reducer(initialState, clickCell(1, 1));
-      expect(state.halted).toBe(true);
+      const state1 = reducer(initialState, clickCell(1, 1));
+      expect(state1.halted).toBe(true);
     });
 
     it('지뢰아니면 주변에 지뢰세서 각인!', () => {
-      const state = reducer(initialState, clickCell(2, 2));
-      expect(state.tableData[2][2]).toBe(3);
-      const state = reducer(initialState, clickCell(3, 3));
-      expect(state.tableData[3][3]).toBe(2);
-      const state = reducer(initialState, clickCell(2, 1));
-      expect(state.tableData[2][1]).toBe(2);
+      const state2 = reducer(initialState, clickCell(2, 2));
+
+      expect(state2.tableData[2][2]).toBe(4);
+
+      const state3 = reducer(initialState, clickCell(3, 3));
+
+      expect(state3.tableData[3][3]).toBe(2);
+
+      const state4 = reducer(initialState, clickCell(2, 1));
+
+      expect(state4.tableData[2][1]).toBe(3);
     });
 
   });

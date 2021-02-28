@@ -17,6 +17,7 @@ const reducers = {
     return {
       ...state,
       tableData: makeTable(Number(state.row), Number(state.col), Number(state.mine)),
+      halted: false,
     }
   },
   'clickRight': (state, { payload: { row, col } }) => {
@@ -26,7 +27,13 @@ const reducers = {
     }
   },
   'clickCell': (state, { payload: { row, col } }) => {
-    return left(state, row, col)
+    return left(state, row, col);
+  },
+  'endGame': (state) => {
+    return {
+      ...state,
+      halted: true,
+    }
   },
 };
 

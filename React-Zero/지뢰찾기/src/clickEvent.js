@@ -67,15 +67,34 @@ function right(table, row, col) {
   return copyTable;
 }
 
-function makeNearPointArray(table, row, col) {
-  const nearPoint = [];
+function makeNearContentArray(table, row, col) {
+  const nearContent = [];
+
   for (let i = -1; i < 2; i++) {
     for (let j = -1; j < 2; j++) {
       if (i === 0 && j === 0) continue;
 
       if (0 <= row + i && row + i < table.length) {
         if (0 <= col + j && col + j < table[0].length) {
-          nearPoint.push(table[row + i][col + j])
+          nearContent.push(table[row + i][col + j]);
+        }
+      }
+    }
+  }
+
+  return nearContent
+}
+
+function makeNearPointArray(table, row, col) {
+  const nearPoint = [];
+
+  for (let i = -1; i < 2; i++) {
+    for (let j = -1; j < 2; j++) {
+      if (i === 0 && j === 0) continue;
+
+      if (0 <= row + i && row + i < table.length) {
+        if (0 <= col + j && col + j < table[0].length) {
+          nearPoint.push([row + i, col + j]);
         }
       }
     }
@@ -85,15 +104,43 @@ function makeNearPointArray(table, row, col) {
 }
 
 function calculateNearMine(table, row, col) {
-  const nearPoint = makeNearPointArray(table, row, col)
+  const nearPoint = makeNearContentArray(table, row, col);
+  let count = 0
+  nearPoint.forEach((item) => {
+    [
+      CELL.MINE,
+      CELL.MINE_FLAG,
+      CELL.MINE_OPENED,
+      CELL.MINE_QUATIONS
+    ].includes(item) ? count += 1 : count += 0
+  })
 
-
+  return count;
 }
 
 function left(state, row, col) {
   const copyTable = []
+
   for (let i = 0; i < state.tableData.length; i++) {
     copyTable[i] = [...state.tableData[i]];
+  }
+
+  function makeNuclearEffect(row, col) {
+    // 이미 연 곳은 하지않는다.
+    if (copyTable[row][col] >= 0) {
+      return;
+    }
+
+    const mineCount = calculateNearMine(copyTable, row, col);
+
+    // 이미 연 곳은 하지않는다.
+    copyTable[row][col] = mineCount;
+
+    if (mineCount === 0) {
+      makeNearPointArray(copyTable, row, col).forEach(([row, col]) => {
+        return makeNuclearEffect(row, col);
+      });
+    }
   }
 
   if (copyTable[row][col] === CELL.MINE) {
@@ -107,14 +154,7 @@ function left(state, row, col) {
   }
 
   if (copyTable[row][col] === CELL.NORMAL) {
-    const mineCount = calculateNearMine(table, row, col)
-
-    // if (nearMineCount) {
-
-    // }
-
-    copyTable[row][col] = mineCount
-
+    makeNuclearEffect(row, col)
     return ({
       ...state,
       tableData: copyTable,
