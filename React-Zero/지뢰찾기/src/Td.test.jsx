@@ -69,7 +69,7 @@ describe('Cell은', () => {
     expect(container.querySelector("td").innerHTML).toBe('?');
   })
 
-  it('확실한 칸이면 !를 보여준다.', () => {
+  it('확실한 칸이면 🏴‍☠️를 보여준다.', () => {
     const { container } = render(<Td
       row={3}
       col={3}
@@ -79,6 +79,6 @@ describe('Cell은', () => {
       container: document.body.appendChild(tableRow)
     })
 
-    expect(container.querySelector("td").innerHTML).toBe('!');
+    expect(container.querySelector("td").innerHTML).toBe('🏴‍☠️');
   })
 })

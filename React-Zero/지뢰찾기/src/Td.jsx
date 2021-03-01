@@ -36,7 +36,7 @@ export default function Td({
     }
 
     if ([CELL.MINE_FLAG, CELL.NORMAL_FLAG].includes(value)) {
-      return '!'
+      return '🏴‍☠️'
     };
 
     if ([CELL.MINE_QUATIONS, CELL.NORMAL_QUATIONS].includes(value)) {
