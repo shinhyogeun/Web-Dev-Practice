@@ -10,8 +10,16 @@ describe('Tr', () => {
   it('Td들을 보여준다.', () => {
     const row = 3;
     const cols = [1, 0, 1, 0, 0, 0, 1];
-
-    const { queryAllByText } = render(<Tr row={row} cols={cols} onClick={handleClick} />);
+    const tbody = document.createElement('tbody')
+    const { queryAllByText } = render(
+      <Tr
+        row={row}
+        cols={cols}
+        onClick={handleClick}
+      />,
+      {
+        container: document.body.appendChild(tbody)
+      });
 
     [0, 1].forEach((value) => {
       queryAllByText(value).forEach((cell) => {
