@@ -21,7 +21,7 @@ function checkEnd(dispatch, table, mineCount) {
 }
 
 export default function TableContainer() {
-  console.log("나 다시그려지는 거니?")
+  // console.log("나 다시그려지는 거니?")
   const dispatch = useDispatch();
   const { tableData, mine, halted } = useSelector((state) => ({
     tableData: state.tableData,
