@@ -5,11 +5,12 @@ import {
   makeTable,
   clickCell,
   clickRight,
+  updateRemainMine,
 } from './actions';
 
 import reducer from './reducer';
 
-import { CELL } from './clickEvent';
+import { calculateRemainMine, CELL } from './clickEvent';
 
 describe('reducer는', () => {
 
@@ -23,6 +24,12 @@ describe('reducer는', () => {
     const state = reducer(initialState, makeTable())
 
     expect(state.tableData).not.toBe(initialState.tableData);
+  });
+
+  it('지뢰갯수에서 사용자가 심은 깃발갯수를 계산해 준다.', () => {
+    const state = reducer(initialState, updateRemainMine());
+
+    expect(state.remainMine).toBe(6);
   });
 
   it('오른쪽 버튼을 클릭하면 ! -> ? -> 평범 순서대로 바뀐다.', () => {
