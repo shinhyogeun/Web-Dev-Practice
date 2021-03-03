@@ -39,7 +39,7 @@ describe('지뢰밭은', () => {
     });
   })
 
-  it('오른쪽 클릭하면 무 -> ! -> ?변경', () => {
+  it('오른쪽 클릭하면 무 -> ! -> ?변경 / 몇개의 지뢰가 남았는지를 보여주는 함수 실행', () => {
     const dispatch = jest.fn();
 
     useDispatch.mockImplementation(() => (dispatch));

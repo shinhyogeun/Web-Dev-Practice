@@ -4,6 +4,7 @@ const initialState = {
   row: '',
   col: '',
   mine: '',
+  remainMine: null,
   halted: null,
   tableData: [],
   time: 0,

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Table from './Table';
 
-import { clickCell, clickRight, endGame, gameStart } from './actions';
+import { clickCell, clickRight, endGame, gameStart, updateRemainMine } from './actions';
 
 function checkEnd(dispatch, table, mineCount) {
   const safeAreas = table.flat().length - mineCount;
@@ -49,7 +49,9 @@ export default function TableContainer() {
     if (halted) return;
 
     dispatch(clickRight(row, col));
+    dispatch();
   }
+
 
   return (
     <Table
