@@ -9,8 +9,10 @@ import SelectedMineContainer from './SelectedMineContainer';
 jest.mock('react-redux');
 
 describe('selectedMineContainer', () => {
-  useSelector(selector => selector({ selectedMine: 10 }));
-  
+  useSelector.mockImplementation(selector => selector({
+    selectedMine: 10
+  }));
+
   it('지뢰를 가져와서 보여준다.', () => {
     const { queryByText } = render(<SelectedMineContainer />);
 
