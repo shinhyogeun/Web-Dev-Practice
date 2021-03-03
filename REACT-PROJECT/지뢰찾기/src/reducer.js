@@ -19,6 +19,7 @@ const reducers = {
     return {
       ...state,
       tableData: makeTable(Number(state.row), Number(state.col), Number(state.mine)),
+      remainMine: state.mine,
       halted: null,
       time: 0,
     }

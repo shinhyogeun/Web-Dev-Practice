@@ -49,7 +49,7 @@ export default function TableContainer() {
     if (halted) return;
 
     dispatch(clickRight(row, col));
-    dispatch();
+    dispatch(updateRemainMine());
   }
 
 
