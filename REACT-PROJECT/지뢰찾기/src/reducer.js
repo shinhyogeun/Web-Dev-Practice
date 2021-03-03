@@ -50,12 +50,12 @@ const reducers = {
       time: state.time + 1,
     }
   },
-  // 'updateRemainMine': (state) => {
-  //   return {
-  //     ...state,
-  //     remainMine: calculateRemainMine(state.tableData),
-  //   }
-  // }
+  'updateRemainMine': (state) => {
+    return {
+      ...state,
+      remainMine: calculateRemainMine(state.tableData, state.mine),
+    }
+  }
 };
 
 export default function reducer(state = initialState, action) {

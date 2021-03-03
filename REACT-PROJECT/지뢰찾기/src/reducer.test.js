@@ -10,7 +10,7 @@ import {
 
 import reducer from './reducer';
 
-import { calculateRemainMine, CELL } from './clickEvent';
+import { CELL } from './clickEvent';
 
 describe('reducer는', () => {
 
