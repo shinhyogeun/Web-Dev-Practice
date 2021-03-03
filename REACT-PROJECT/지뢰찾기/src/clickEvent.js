@@ -164,8 +164,15 @@ function left(state, row, col) {
   return state
 }
 
-export function calculateRemainMine(tableData) {
+export function calculateRemainMine(tableData, mine) {
+  let flagCount = 0
+  tableData.flat().forEach((element) => {
+    if ([CELL.MINE_FLAG, CELL.NORMAL_FLAG].includes(element)) {
+      flagCount += 1;
+    }
+  });
 
+  return (mine - flagCount);
 }
 
 export {
