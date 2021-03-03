@@ -46,3 +46,7 @@ export function clickRight(row, col) {
 export function updateTime() {
   return { type: "updateTime" };
 }
+
+export function updateRemainMine() {
+  return ({ type: "updateRemainMine" });
+}

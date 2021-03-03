@@ -164,6 +164,10 @@ function left(state, row, col) {
   return state
 }
 
+export function calculateRemainMine(tableData) {
+
+}
+
 export {
   CELL,
   makeTable,

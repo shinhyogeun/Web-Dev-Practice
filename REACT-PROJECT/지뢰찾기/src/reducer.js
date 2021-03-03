@@ -1,4 +1,4 @@
-import { right, makeTable, left } from './clickEvent';
+import { right, makeTable, left, calculateRemainMine } from './clickEvent';
 // 언제나 state의 뜻을 명확하게 해야한다. state의 흐름 === 프로그램의 흐름
 const initialState = {
   row: '',
@@ -49,7 +49,13 @@ const reducers = {
       ...state,
       time: state.time + 1,
     }
-  }
+  },
+  // 'updateRemainMine': (state) => {
+  //   return {
+  //     ...state,
+  //     remainMine: calculateRemainMine(state.tableData),
+  //   }
+  // }
 };
 
 export default function reducer(state = initialState, action) {
