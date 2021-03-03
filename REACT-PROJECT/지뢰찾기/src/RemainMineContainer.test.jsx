@@ -4,17 +4,17 @@ import { useSelector } from 'react-redux';
 
 import { render } from '@testing-library/react';
 
-import SelectedMineContainer from './SelectedMineContainer';
+import RemainMineContainer from './RemainMineContainer';
 
 jest.mock('react-redux');
 
-describe('selectedMineContainer', () => {
+describe('RemainMineContainer', () => {
   useSelector.mockImplementation(selector => selector({
-    selectedMine: 10
+    remainMine: 10
   }));
 
   it('지뢰를 가져와서 보여준다.', () => {
-    const { queryByText } = render(<SelectedMineContainer />);
+    const { queryByText } = render(<RemainMineContainer />);
 
     expect(queryByText(/10/)).toBeInTheDocument();
   });
