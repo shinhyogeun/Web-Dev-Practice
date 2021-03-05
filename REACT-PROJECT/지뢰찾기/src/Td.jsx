@@ -47,6 +47,45 @@ export default function Td({
     return value;
   }
 
+  let right = false
+  let left = false
+
+  function checkNear(right, left) {
+    if (right && left) {
+      console.log("완성!")
+    }
+  }
+
+  if (value >= 0) {
+    return (
+      <td
+        id={String(row) + String(col)}
+        style={makeCSS(value)}
+        onContextMenu={(e) => {
+          e.preventDefault();
+          right = true;
+          checkNear(right, left);
+        }}
+        onMouseDown={(e) => {
+          if (!e.button) {
+            left = true;
+            checkNear(right, left);
+          }
+        }}
+        onMouseUp={(e) => {
+          left = false;
+          right = false;
+        }}
+        onMouseLeave={(e) => {
+          left = false;
+          right = false;
+        }}
+      >
+        {makeInnerText(value) === 0 ? '' : makeInnerText(value)}
+      </td>
+    );
+  }
+
   return (
     <td
       id={String(row) + String(col)}
@@ -58,3 +97,7 @@ export default function Td({
     </td>
   )
 }
+
+// first of all let right, let left
+// 오른쪽 클릭 (right 바꾸고 안에서)
+// let 

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>repl.it</title>
+  </head>
+  <body>
+    <h1>Create An Account</h1>
+    <form>
+      <div>
+        <label for="first-name">First Name</label>
+        <input required type="input" id="first-name" placeholder="First Name" />
+      </div>
+
+      <div>
+        <label for="last-name">Last Name</label>
+        <input required type="input" id="last-name" placeholder="Last Name" />
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input required type="email" id="email" placeholder="Email" />
+      </div>
+
+      <div>
+        <label for="user-name">Username</label>
+        <input required type="input" id="user-name" placeholder="Username" />
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input
+          required
+          type="password"
+          id="password"
+          minlength="10"
+          placeholder="Password"
+        />
+      </div>
+
+      <div>
+        <label for="birth-date">Birth date</label>
+        <input required type="date" id="birth-date" required />
+      </div>
+
+      <div>
+        <label for="happy">How happy are you?</label>
+        <input required type="range" list="tickmarks" />
+
+        <datalist id="tickmarks">
+          <option value="0"></option>
+          <option value="10"></option>
+          <option value="20"></option>
+          <option value="30"></option>
+          <option value="40"></option>
+          <option value="50"></option>
+          <option value="60"></option>
+          <option value="70"></option>
+          <option value="80"></option>
+          <option value="90"></option>
+          <option value="100"></option>
+        </datalist>
+      </div>
+
+      <div>
+        <label for="color">What is your fav.color?</label>
+        <input required type="color" id="color" />
+      </div>
+
+      <div>
+        <input type="submit" value="Create Accout" />
+      </div>
+    </form>
+  </body>
+</html>

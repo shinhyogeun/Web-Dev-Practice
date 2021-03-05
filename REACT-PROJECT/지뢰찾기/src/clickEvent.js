@@ -9,6 +9,9 @@ const CELL = {
   OPENED: 0,
 };
 
+let rightClick = false;
+let leftClick = false;
+
 function makeTable(row, col, mineCount) {
   let table = []
   let count = mineCount;
@@ -180,6 +183,8 @@ export {
   makeTable,
   right,
   left,
+  rightClick,
+  leftClick,
   makeNearPointArray,
   calculateNearMine,
 };

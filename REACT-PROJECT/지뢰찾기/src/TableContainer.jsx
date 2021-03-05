@@ -4,7 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Table from './Table';
 
-import { clickCell, clickRight, endGame, gameStart, updateRemainMine } from './actions';
+import {
+  clickCell,
+  clickRight,
+  endGame,
+  gameStart,
+  updateRemainMine
+} from './actions';
 
 function checkEnd(dispatch, table, mineCount) {
   const safeAreas = table.flat().length - mineCount;
@@ -52,12 +58,16 @@ export default function TableContainer() {
     dispatch(updateRemainMine());
   }
 
+  function handleSimultaneousClick() {
+    dispatch(simultaneousClick());
+  }
 
   return (
     <Table
       tableData={tableData}
       handleClick={handleClickCell}
       handleRightClick={handleRightClick}
+      handleSimultaneousClick={handleSimultaneousClick}
     />
   )
 };
