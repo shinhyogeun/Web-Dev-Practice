@@ -9,7 +9,8 @@ import {
   clickRight,
   endGame,
   gameStart,
-  updateRemainMine
+  updateRemainMine,
+  simultaneousClick,
 } from './actions';
 
 function checkEnd(dispatch, table, mineCount) {
