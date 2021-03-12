@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;600&display=swap");
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Oswald", sans-serif;
+}
+
+main {
+  width: 300px;
+  height: 650px;
+  padding: 0 20px;
+  background-color: white;
+  border: 3px solid darkturquoise;
+}
+
+header {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.xicon {
+  display: flex;
+  align-items: center;
+}
+
+.fas,
+.fa-times {
+  font-size: 30px;
+}
+
+.header__column {
+  width: 33%;
+}
+
+.header__column:nth-child(2) {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.song-info {
+  margin-top: 25px;
+  display: flex;
+}
+
+.song-img {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.song {
+  padding-left: 10px;
+  width: 150px;
+  height: 100px;
+}
+
+.song-name {
+  font-size: 25px;
+}
+
+.play {
+  margin-top: 20px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.play-btn {
+  width: 130px;
+  height: 50px;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 5px 5px black;
+}
+
+.play-btn > span {
+  margin-left: 5px;
+}
+
+.btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid black;
+  box-shadow: 0px 5px 5px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.song-cover {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.song-list {
+  width: 300px;
+  height: 50px;
+  margin-top: 30px;
+}
+
+.song-list {
+  display: flex;
+}
+
+.song-list > .song > .song-persons {
+  font-weight: 100;
+  width: 300px;
+}
+
+.song-list:nth-child(1) > .song-cover {
+  background-color: red;
+}
+
+.song-list:nth-child(2) > .song-cover {
+  background-color: pink;
+}
+
+.song-list:nth-child(3) > .song-cover {
+  background-color: blue;
+}
+
+.song-list:nth-child(4) > .song-cover {
+  background-color: teal;
+}

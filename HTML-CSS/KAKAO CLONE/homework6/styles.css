@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@400;700&display=swap");
+
+main {
+  width: 300px;
+  height: 800px;
+  background-color: orange;
+  font-family: "Hind", sans-serif;
+}
+
+.header {
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.title {
+  position: relative;
+  top: -7px;
+  font-size: 25px;
+}
+
+.search {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: -19px;
+  background-color: white;
+  height: 35px;
+  border-radius: 20px;
+  box-shadow: 0px 0.5px 0.5px gray;
+}
+
+.main-body {
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 710px;
+  background-color: white;
+}
+
+input {
+  border: none;
+  margin-left: 15px;
+}
+
+.fa-search {
+  margin-right: 10px;
+}
+
+.book-of-the-day {
+  display: flex;
+}
+
+.book-of-the-day > img {
+  border-radius: 5px;
+}
+
+.book-detail {
+  margin-left: 15px;
+}
+
+.category {
+  width: 160px;
+  display: flex;
+}
+
+.book-detail > div:nth-child(1) {
+  font-size: 20px;
+}
+
+.book-detail > div:nth-child(2) {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.star {
+  font-size: 12px;
+  color: orange;
+}
+
+.category > div {
+  margin-top: 11px;
+  margin-right: 10px;
+  padding: 2px 7px;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.mark {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mark > div:first-child {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
+  border-radius: 50px;
+}
+
+.mark > div:last-child {
+  font-size: 12px;
+  padding: 8px 12px;
+  width: 80px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+}
+
+.adventrues {
+  display: flex;
+}
+
+.star > i {
+  font-size: 1px;
+}
+
+.adventrues {
+  overflow-x: scroll;
+}
+
+.adventrues-cell > img {
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.popular {
+  display: flex;
+}
+
+.popular > div {
+  margin-left: 10px;
+}
+
+.popular > img {
+  border-radius: 5px;
+}
+.popular-name {
+  position: relative;
+  font-size: 20px;
+}
+
+.popular-detail {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.2);
+}
