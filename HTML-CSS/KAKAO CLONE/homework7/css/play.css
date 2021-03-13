@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,200&display=swap");
+
+.play {
+  margin-left: 40px;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.list-header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-header > i {
+  font-size: 20px;
+}
+
+.singer2 {
+  margin-top: 90px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.singer2 > img {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(227, 16, 206, 0.2);
+  margin-bottom: 30px;
+}
+
+.singer-name2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.genre2 {
+  font-family: "Poppins", sans-serif;
+  color: gray;
+}
+
+.singer2 > div {
+  position: relative;
+  top: 20px;
+}
+
+.time {
+  margin-top: 100px;
+}
+
+.times {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  width: 100%;
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  font-size: 20px;
+  align-items: center;
+}
+
+.times,
+.fa-sync-alt,
+.fa-random {
+  color: gray;
+}
+
+.fa-play-circle {
+  font-size: 60px;
+}

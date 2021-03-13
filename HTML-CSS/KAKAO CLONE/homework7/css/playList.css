@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,200&display=swap");
+
+.playList {
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.list-header {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-header > i {
+  font-size: 20px;
+}
+
+.singer {
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.singer > img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px rgba(227, 16, 206, 0.2);
+  position: relative;
+  top: -10px;
+}
+
+.singer-name {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.genre {
+  font-family: "Poppins", sans-serif;
+  color: gray;
+}
+
+.singer > div {
+  position: relative;
+  top: 20px;
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+}
+
+.info > div:nth-child(1) {
+  width: 100px;
+  height: 37px;
+  color: white;
+  background-color: black;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.info > div:nth-child(2) {
+  width: 100px;
+  height: 37px;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  margin-left: 10px;
+}
+
+.next {
+  margin: 25px 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.next-next {
+  display: flex;
+  align-items: center;
+}
+.next-next > img {
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+.next-song-info {
+  margin-left: 10px;
+}
+
+.next-singer {
+  font-size: 13px;
+  color: gray;
+}
+
+.next-song {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.play-now {
+  background-color: black;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 15px;
+  left: -10px;
+  width: 300px;
+  height: 60px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: space-between;
+}
+
+.now-now {
+  margin-left: 20px;
+}
+.now-singer {
+  color: gray;
+}
+
+.now-song {
+  color: white;
+  margin-top: 2px;
+}
+
+.buttons {
+  margin-right: 15px;
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+}
