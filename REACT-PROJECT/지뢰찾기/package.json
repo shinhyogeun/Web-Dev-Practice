@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --env development",
-    "start": "webpack-dev-server",
+    "start": "webpack serve",
     "test:unit": "jest",
     "coverage": "npm run test:unit -- --coverage",
     "test:e2e": "codeceptjs run --steps",

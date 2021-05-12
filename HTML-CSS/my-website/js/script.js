@@ -1,0 +1,1 @@
+document.querySelector('h1').innerHTML = '반갑습니다.'

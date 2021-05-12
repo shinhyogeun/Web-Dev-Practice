@@ -10,6 +10,7 @@
   "author": "shinhyogenu",
   "license": "MIT",
   "dependencies": {
+    "@u-wave/react-youtube": "^0.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
